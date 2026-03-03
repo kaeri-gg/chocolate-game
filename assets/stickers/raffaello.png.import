@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cht15cpbsslps"
-path="res://.godot/imported/stickers-05.png-4c575915627d1b2c7457a57843487783.ctex"
+uid="uid://3r7tksnbynl0"
+path="res://.godot/imported/raffaello.png-1f9267ef92a0cb8705d3b4136371c11f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/stickers/stickers-05.png"
-dest_files=["res://.godot/imported/stickers-05.png-4c575915627d1b2c7457a57843487783.ctex"]
+source_file="res://assets/stickers/raffaello.png"
+dest_files=["res://.godot/imported/raffaello.png-1f9267ef92a0cb8705d3b4136371c11f.ctex"]
 
 [params]
 

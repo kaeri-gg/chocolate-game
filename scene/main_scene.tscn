@@ -1,8 +1,8 @@
 [gd_scene format=3 uid="uid://cnuvjqmdyqnar"]
 
-[ext_resource type="Theme" path="res://main_scene.tres" id="1_wgwml"]
 [ext_resource type="Script" uid="uid://d3nbghyax85d" path="res://script/main_scene.gd" id="1_x5n27"]
 [ext_resource type="Theme" uid="uid://btxsjljyfrcu6" path="res://theme/grid_styles.tres" id="2_ry1uq"]
+[ext_resource type="Theme" uid="uid://c4cqm21oxci5n" path="res://theme/main_scene.tres" id="2_x5n27"]
 [ext_resource type="Theme" uid="uid://dbv4h763ugyhj" path="res://theme/timer_theme.tres" id="3_fb1ex"]
 [ext_resource type="Theme" uid="uid://q4gnfgf0ux1n" path="res://theme/counter_theme.tres" id="4_4wnd8"]
 
@@ -22,7 +22,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-theme = ExtResource("1_wgwml")
+theme = ExtResource("2_x5n27")
 
 [node name="Grid" type="Panel" parent="." unique_id=1245429442]
 layout_mode = 1
@@ -62,110 +62,114 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/separation = 20
 
-[node name="HBoxContainer" type="HBoxContainer" parent="Grid/MarginContainer/Panel/VBoxContainer" unique_id=1381575763]
+[node name="GridContainer1-4" type="HBoxContainer" parent="Grid/MarginContainer/Panel/VBoxContainer" unique_id=1381575763]
+unique_name_in_owner = true
 custom_minimum_size = Vector2(100, 100)
 layout_mode = 2
 theme = ExtResource("2_ry1uq")
 theme_override_constants/separation = 20
 
-[node name="Button" type="Button" parent="Grid/MarginContainer/Panel/VBoxContainer/HBoxContainer" unique_id=1252871841]
+[node name="Button" type="Button" parent="Grid/MarginContainer/Panel/VBoxContainer/GridContainer1-4" unique_id=1252871841]
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 3
 theme = ExtResource("2_ry1uq")
 
-[node name="Button2" type="Button" parent="Grid/MarginContainer/Panel/VBoxContainer/HBoxContainer" unique_id=2030997233]
+[node name="Button2" type="Button" parent="Grid/MarginContainer/Panel/VBoxContainer/GridContainer1-4" unique_id=2030997233]
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="Button3" type="Button" parent="Grid/MarginContainer/Panel/VBoxContainer/HBoxContainer" unique_id=1154182183]
+[node name="Button3" type="Button" parent="Grid/MarginContainer/Panel/VBoxContainer/GridContainer1-4" unique_id=1154182183]
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="Button4" type="Button" parent="Grid/MarginContainer/Panel/VBoxContainer/HBoxContainer" unique_id=117593105]
+[node name="Button4" type="Button" parent="Grid/MarginContainer/Panel/VBoxContainer/GridContainer1-4" unique_id=117593105]
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="HBoxContainer2" type="HBoxContainer" parent="Grid/MarginContainer/Panel/VBoxContainer" unique_id=1914038846]
+[node name="GridContainer5-8" type="HBoxContainer" parent="Grid/MarginContainer/Panel/VBoxContainer" unique_id=1914038846]
+unique_name_in_owner = true
 custom_minimum_size = Vector2(100, 100)
 layout_mode = 2
 theme = ExtResource("2_ry1uq")
 theme_override_constants/separation = 20
 
-[node name="Button5" type="Button" parent="Grid/MarginContainer/Panel/VBoxContainer/HBoxContainer2" unique_id=420071638]
+[node name="Button5" type="Button" parent="Grid/MarginContainer/Panel/VBoxContainer/GridContainer5-8" unique_id=420071638]
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 3
 theme = ExtResource("2_ry1uq")
 
-[node name="Button6" type="Button" parent="Grid/MarginContainer/Panel/VBoxContainer/HBoxContainer2" unique_id=543369566]
+[node name="Button6" type="Button" parent="Grid/MarginContainer/Panel/VBoxContainer/GridContainer5-8" unique_id=543369566]
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="Button7" type="Button" parent="Grid/MarginContainer/Panel/VBoxContainer/HBoxContainer2" unique_id=711281490]
+[node name="Button7" type="Button" parent="Grid/MarginContainer/Panel/VBoxContainer/GridContainer5-8" unique_id=711281490]
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="Button8" type="Button" parent="Grid/MarginContainer/Panel/VBoxContainer/HBoxContainer2" unique_id=1614785476]
+[node name="Button8" type="Button" parent="Grid/MarginContainer/Panel/VBoxContainer/GridContainer5-8" unique_id=1614785476]
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="HBoxContainer3" type="HBoxContainer" parent="Grid/MarginContainer/Panel/VBoxContainer" unique_id=528899076]
+[node name="GridContainer9-12" type="HBoxContainer" parent="Grid/MarginContainer/Panel/VBoxContainer" unique_id=528899076]
+unique_name_in_owner = true
 custom_minimum_size = Vector2(100, 100)
 layout_mode = 2
 theme = ExtResource("2_ry1uq")
 theme_override_constants/separation = 20
 
-[node name="Button9" type="Button" parent="Grid/MarginContainer/Panel/VBoxContainer/HBoxContainer3" unique_id=2123380384]
+[node name="Button9" type="Button" parent="Grid/MarginContainer/Panel/VBoxContainer/GridContainer9-12" unique_id=2123380384]
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 3
 theme = ExtResource("2_ry1uq")
 
-[node name="Button10" type="Button" parent="Grid/MarginContainer/Panel/VBoxContainer/HBoxContainer3" unique_id=1117668270]
+[node name="Button10" type="Button" parent="Grid/MarginContainer/Panel/VBoxContainer/GridContainer9-12" unique_id=1117668270]
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="Button11" type="Button" parent="Grid/MarginContainer/Panel/VBoxContainer/HBoxContainer3" unique_id=1452310385]
+[node name="Button11" type="Button" parent="Grid/MarginContainer/Panel/VBoxContainer/GridContainer9-12" unique_id=1452310385]
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="Button12" type="Button" parent="Grid/MarginContainer/Panel/VBoxContainer/HBoxContainer3" unique_id=761609547]
+[node name="Button12" type="Button" parent="Grid/MarginContainer/Panel/VBoxContainer/GridContainer9-12" unique_id=761609547]
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="HBoxContainer4" type="HBoxContainer" parent="Grid/MarginContainer/Panel/VBoxContainer" unique_id=141988342]
+[node name="GridContainer13-16" type="HBoxContainer" parent="Grid/MarginContainer/Panel/VBoxContainer" unique_id=141988342]
+unique_name_in_owner = true
 custom_minimum_size = Vector2(100, 100)
 layout_mode = 2
 theme = ExtResource("2_ry1uq")
 theme_override_constants/separation = 20
 
-[node name="Button13" type="Button" parent="Grid/MarginContainer/Panel/VBoxContainer/HBoxContainer4" unique_id=1003784180]
+[node name="Button13" type="Button" parent="Grid/MarginContainer/Panel/VBoxContainer/GridContainer13-16" unique_id=1003784180]
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 3
 theme = ExtResource("2_ry1uq")
 
-[node name="Button14" type="Button" parent="Grid/MarginContainer/Panel/VBoxContainer/HBoxContainer4" unique_id=1175287760]
+[node name="Button14" type="Button" parent="Grid/MarginContainer/Panel/VBoxContainer/GridContainer13-16" unique_id=1175287760]
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="Button15" type="Button" parent="Grid/MarginContainer/Panel/VBoxContainer/HBoxContainer4" unique_id=1780795885]
+[node name="Button15" type="Button" parent="Grid/MarginContainer/Panel/VBoxContainer/GridContainer13-16" unique_id=1780795885]
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="Button16" type="Button" parent="Grid/MarginContainer/Panel/VBoxContainer/HBoxContainer4" unique_id=1907446115]
+[node name="Button16" type="Button" parent="Grid/MarginContainer/Panel/VBoxContainer/GridContainer13-16" unique_id=1907446115]
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 3

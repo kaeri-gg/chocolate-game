@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://4jdh10r68lfl"
-path="res://.godot/imported/stickers-01.png-649bf819e1eb082093b6c27b816d1471.ctex"
+uid="uid://bbuwlqs0tjt3c"
+path="res://.godot/imported/kinder2.png-93f271e7b4ea65d904678b04c40f91d7.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/stickers/stickers-01.png"
-dest_files=["res://.godot/imported/stickers-01.png-649bf819e1eb082093b6c27b816d1471.ctex"]
+source_file="res://assets/stickers/kinder2.png"
+dest_files=["res://.godot/imported/kinder2.png-93f271e7b4ea65d904678b04c40f91d7.ctex"]
 
 [params]
 
