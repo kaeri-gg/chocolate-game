@@ -1,6 +1,8 @@
 class_name Utils
 extends Node
 
+var points = 0
+
 # Async function to add desired delays between execution lines
 func timeout(delay: float) -> void:
 	var timer := get_tree().create_timer(delay)

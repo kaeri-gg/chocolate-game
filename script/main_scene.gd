@@ -6,7 +6,9 @@ extends Control
 @onready var player_score_label: Label = %PlayerScoreLabel
 @onready var player_timer_label: Label = %PlayerTimerLabel
 
-const streaks: Array[int] = [4, 7, 11, 16, 22, 28, 35, 42, 50, 58, 72]
+
+const WinningScene := preload("res://script/winning_scene.gd")
+
 const feedback_showtime: float = 0.8
 
 var buttons: Array[Button]
@@ -45,6 +47,9 @@ func reset_game() -> void:
 	streak_count = 1
 	points = 0
 	count_down_label.text = str(countdown)
+	player_score_label.text = ""
+	player_timer_label.text = ""
+	
 
 func reset_round() -> void:
 	click_count = 0
@@ -55,7 +60,7 @@ func reset_round() -> void:
 func reset_grid() -> void:
 	for index in buttons.size():
 		buttons[index].icon = null
-		
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	for child in grid_container.get_children():
@@ -63,7 +68,8 @@ func _ready() -> void:
 			buttons.append(child)
 		
 	for i in buttons.size():
-		buttons[i].pressed.connect(on_button_pressed.bind(i))
+		buttons[i].button_down.connect(on_button_pressed.bind(i))
+	
 			
 	reset_game()
 	grid_container.hide()
@@ -90,7 +96,10 @@ func assign_icons() -> void:
 	
 	for index in correct_tiles:
 		fade_out(index)
-	
+
+func on_play_again_pressed() -> void:
+	reset_game()
+
 func on_button_pressed(index: int) -> void:
 	buttons[index].disabled = true
 	
@@ -162,7 +171,7 @@ func handle_lose_round() -> void:
 	player_score_label.text = str(points)
 	
 func evaluate_icon_count() -> void:
-	if streak_count in streaks:
+	if streak_count % 3 == 0:
 		chocolate_count += 1
 
 func start_timer() -> void:
@@ -172,7 +181,7 @@ func start_timer() -> void:
 		# Game ended timer's out
 		print("Game ended", points)
 		disable_buttons()
-		return 
+		return show_winning_scene()
 		
 	await utils.timeout(1)
 	seconds -= 1
@@ -200,7 +209,9 @@ func start_countdown() -> void:
 	await start_countdown()
 	
 	
-
+func show_winning_scene() -> void:
+	utils.points = points
+	get_tree().change_scene_to_file("res://scene/winning_scene.tscn")
 	
 	
 	
