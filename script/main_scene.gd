@@ -2,11 +2,13 @@ class_name MainScene
 extends Control
 
 @onready var grid_container: GridContainer = %GridContainer
+@onready var feedback: Feedback = %Feedback
 
 var buttons: Array[Button]
 var chocolate_count: int
 var streak_count: int
-var correct_tiles: Dictionary[int, bool] = {}
+
+var correct_tiles: Dictionary[int, bool] = {} # Tile index -> Clicked flag
 var tiles_icon: Dictionary = {}
 var click_count: int = 0
 
@@ -35,6 +37,7 @@ func reset_game() -> void:
 
 func reset_round() -> void:
 	click_count = 0
+	tiles_icon = {}
 	assign_icons()
 	enable_buttons()
 	
@@ -79,25 +82,28 @@ func assign_icons() -> void:
 	
 func on_button_pressed(index: int) -> void:
 	buttons[index].disabled = true
-	correct_tiles.set(index, true)
 	
-	if not index in correct_tiles:
-		if click_count == correct_tiles.size():
-			return
-			
-		buttons[index].icon = wrong_icon
-		await utils.timeout(0.5)
+	if not correct_tiles.has(index):
+		feedback.show_wrong()
+		await utils.timeout(0.4)
+		feedback.hide()
 		reset_grid()
 		reset_round()
+	
 	else:
+		# Correct click
+		correct_tiles.set(index, true)
 		click_count += 1
 		fade_in(index, tiles_icon.get(index))
-
+		
 		if click_count == correct_tiles.size():
+			# Round win
+			feedback.show_correct()
 			await utils.timeout(0.2)
 			reset_grid()
 			reset_round()
-			print("correct, next round")
+			feedback.hide()
+			
 		
 func get_random_icon():
 	return icon_textures[randi() % icon_textures.size()]
@@ -109,9 +115,9 @@ func fade_in(index: int, icon: Variant):
 	return buttons[index].icon
 	
 func fade_out(index: int) -> void:
-	if index in correct_tiles:
-		if not correct_tiles.get(index):
-			buttons[index].icon = null
+	var clicked = correct_tiles.get(index)
+	if not clicked:
+		buttons[index].icon = null
 	
 func enable_buttons() -> void:
 	for button in buttons:

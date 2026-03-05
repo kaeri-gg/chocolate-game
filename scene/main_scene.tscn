@@ -5,6 +5,10 @@
 [ext_resource type="Theme" uid="uid://c4cqm21oxci5n" path="res://theme/main_scene.tres" id="2_x5n27"]
 [ext_resource type="Theme" uid="uid://dbv4h763ugyhj" path="res://theme/timer_theme.tres" id="3_fb1ex"]
 [ext_resource type="Theme" uid="uid://q4gnfgf0ux1n" path="res://theme/counter_theme.tres" id="4_4wnd8"]
+[ext_resource type="Texture2D" uid="uid://w3jvmc44k6ao" path="res://assets/feedback-02.png" id="6_jsie2"]
+[ext_resource type="Script" uid="uid://cprinh7cp8qor" path="res://script/feedback.gd" id="6_qvu5t"]
+
+[sub_resource type="Theme" id="Theme_jsie2"]
 
 [node name="main_scene" type="Control" unique_id=456637166]
 layout_mode = 3
@@ -37,6 +41,7 @@ offset_right = 250.0
 offset_bottom = 250.0
 grow_horizontal = 2
 grow_vertical = 2
+theme = SubResource("Theme_jsie2")
 
 [node name="MarginContainer" type="MarginContainer" parent="Grid" unique_id=704897198]
 layout_mode = 1
@@ -257,3 +262,38 @@ layout_mode = 2
 text = "3"
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="Feedback" type="Panel" parent="." unique_id=1788206073]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("6_qvu5t")
+
+[node name="MarginContainer" type="MarginContainer" parent="Feedback" unique_id=1174390133]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -178.0
+offset_top = -181.5
+offset_right = 178.0
+offset_bottom = 181.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureRect" type="TextureRect" parent="Feedback/MarginContainer" unique_id=1239582743]
+unique_name_in_owner = true
+layout_mode = 2
+texture = ExtResource("6_jsie2")
