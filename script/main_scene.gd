@@ -13,8 +13,10 @@ var buttons: Array[Button]
 var chocolate_count: int
 var streak_count: int 
 var click_count: int 
+
 var points: int
 var seconds: int
+var countdown: int
 
 var correct_tiles: Dictionary[int, bool] = {} # Tile index -> Clicked flag
 var tiles_icon: Dictionary = {}
@@ -39,10 +41,12 @@ var dummy_textures = [
 var wrong_icon = preload("res://assets/stickers/image-x-2.png")
 
 func reset_game() -> void:
+	countdown = 3
 	seconds = 60
 	chocolate_count = 3
 	streak_count = 1
 	points = 0
+	count_down_label.text = str(countdown)
 
 func reset_round() -> void:
 	click_count = 0
@@ -56,20 +60,16 @@ func reset_grid() -> void:
 		
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	player_score_label.text = "0"
-	
 	for child in grid_container.get_children():
 		if child is Button:
 			buttons.append(child)
-	
+		
 	for i in buttons.size():
 		buttons[i].pressed.connect(on_button_pressed.bind(i))
-		
+			
 	reset_game()
-	reset_grid()
-	reset_round()
-	
-	start_timer()
+	grid_container.hide()
+	start_countdown()
 
 func get_icon_indexes() -> Dictionary[int, bool]:
 	var indexes_of_icons: Dictionary[int, bool] = {}
@@ -169,6 +169,7 @@ func evaluate_icon_count() -> void:
 
 func start_timer() -> void:
 	player_timer_label.text = str(seconds)
+	
 	if seconds <= 0:
 		# Game ended timer's out
 		print("Game ended", points)
@@ -179,11 +180,29 @@ func start_timer() -> void:
 	seconds -= 1
 	await start_timer()
 
+@onready var count_down_label: Label = %CountDownLabel
+
+func start_countdown() -> void:
+	count_down_label.text = str(countdown)
+	print(countdown)
+	if countdown == 0:
+		grid_container.show()
+		player_score_label.text = "0"
+		count_down_label.hide()
+		
+		reset_grid()
+		reset_round()
+		
+		start_timer()
+		
+		return # stops recursive call
+		
+	await utils.timeout(1)
+	countdown -= 1
+	await start_countdown()
 	
 	
-	
-	
-	
+
 	
 	
 	

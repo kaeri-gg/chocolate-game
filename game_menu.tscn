@@ -3,6 +3,7 @@
 [ext_resource type="Theme" uid="uid://bm8opoun61hyp" path="res://theme/menu_theme.tres" id="1_jowre"]
 [ext_resource type="Texture2D" uid="uid://b8k7i34j4el6y" path="res://assets/logo.png" id="2_jprcw"]
 [ext_resource type="Script" uid="uid://bsewxssn3vong" path="res://script/start_button.gd" id="3_jprcw"]
+[ext_resource type="Theme" uid="uid://cqumuq5j4ylg" path="res://grass.tres" id="4_5rxej"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rjxss"]
 bg_color = Color(0.90588236, 0.5764706, 0, 1)
@@ -136,5 +137,17 @@ mouse_default_cursor_shape = 2
 theme = SubResource("Theme_wr0q8")
 text = "Play"
 script = ExtResource("3_jprcw")
+
+[node name="Background2" type="Panel" parent="." unique_id=1333572373]
+custom_minimum_size = Vector2(0, 150)
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 0
+mouse_filter = 2
+theme = ExtResource("4_5rxej")
 
 [connection signal="pressed" from="Panel/PanelContainer/MarginContainer/VBoxContainer/MarginContainer2/StartButton" to="Panel/PanelContainer/MarginContainer/VBoxContainer/MarginContainer2/StartButton" method="on_start_button_pressed"]
