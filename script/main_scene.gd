@@ -23,22 +23,20 @@ var tiles_icon: Dictionary = {}
 
 
 var icon_textures = [
-	preload("res://assets/stickers/bueno.png"),
-	preload("res://assets/stickers/ferrero.png"),
-	preload("res://assets/stickers/kinder2.png"),
-	preload("res://assets/stickers/kinder3.png"),
-	preload("res://assets/stickers/kinder.png"),
-	preload("res://assets/stickers/nutella.png"),
-	preload("res://assets/stickers/raffaello.png")
+	preload("uid://dsrya3h6t1851"),
+	preload("uid://bitutw40j27dk"),
+	preload("uid://dfstr8oeu3itf"),
+	preload("uid://hsyvq1kkt7k1"),
+	preload("uid://b3suuvbc7c5mc"),
+	preload("uid://cttntkbshkb70"),
+	preload("uid://c1ipfvhdo56of")
 ]
 
 var dummy_textures = [
-	preload("res://assets/stickers/image-x.png"),
-	preload("res://assets/stickers/image-x-1.png"),
-	preload("res://assets/stickers/image-x-2.png")
+	preload("uid://mbnh0kmcrqxv"),
+	preload("uid://bouyxneg3nkty"),
+	preload("uid://b8r1dfcyugafk")
 ]
-
-var wrong_icon = preload("res://assets/stickers/image-x-2.png")
 
 func reset_game() -> void:
 	countdown = 3
@@ -103,7 +101,7 @@ func on_button_pressed(index: int) -> void:
 		handle_lose_round()
 		disable_buttons()
 		
-		await utils.timeout(feedback_showtime)
+		await utils.timeout(2 * feedback_showtime)
 		feedback.hide()
 		
 		reset_grid()

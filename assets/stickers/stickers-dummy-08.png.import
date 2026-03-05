@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b0lckh5nqmqtg"
-path="res://.godot/imported/nutella.png-acf11f3e1078abd6e7ec3f2daad6b855.ctex"
+uid="uid://mbnh0kmcrqxv"
+path="res://.godot/imported/stickers-dummy-08.png-f44b0c71e8ee181a42e9861dc2bcae93.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/stickers/nutella.png"
-dest_files=["res://.godot/imported/nutella.png-acf11f3e1078abd6e7ec3f2daad6b855.ctex"]
+source_file="res://assets/stickers/stickers-dummy-08.png"
+dest_files=["res://.godot/imported/stickers-dummy-08.png-f44b0c71e8ee181a42e9861dc2bcae93.ctex"]
 
 [params]
 

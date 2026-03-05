@@ -12,7 +12,10 @@ func _ready() -> void:
 func show_wrong() -> void:
 	self.show()
 	feedbackImage.texture = wrong_answer
+	utils.fade_in(feedbackImage, 0.2)
 	
 func show_correct() -> void:
 	self.show()
 	feedbackImage.texture = correct_answer
+	utils.fade_in(feedbackImage, 0.2)
+	
