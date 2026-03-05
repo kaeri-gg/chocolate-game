@@ -3,16 +3,23 @@ extends Control
 
 @onready var grid_container: GridContainer = %GridContainer
 @onready var feedback: Feedback = %Feedback
+@onready var player_score_label: Label = %PlayerScoreLabel
+@onready var player_timer_label: Label = %PlayerTimerLabel
+
+const streaks: Array[int] = [4, 7, 11, 16, 22, 28, 35, 42, 50, 58, 72]
+const feedback_showtime: float = 0.8
 
 var buttons: Array[Button]
 var chocolate_count: int
-var streak_count: int
+var streak_count: int 
+var click_count: int 
+var points: int
+var seconds: int
 
 var correct_tiles: Dictionary[int, bool] = {} # Tile index -> Clicked flag
 var tiles_icon: Dictionary = {}
-var click_count: int = 0
 
-	
+
 var icon_textures = [
 	preload("res://assets/stickers/bueno.png"),
 	preload("res://assets/stickers/ferrero.png"),
@@ -32,8 +39,10 @@ var dummy_textures = [
 var wrong_icon = preload("res://assets/stickers/image-x-2.png")
 
 func reset_game() -> void:
-	chocolate_count = 4
-	streak_count = 0
+	seconds = 60
+	chocolate_count = 3
+	streak_count = 1
+	points = 0
 
 func reset_round() -> void:
 	click_count = 0
@@ -47,6 +56,8 @@ func reset_grid() -> void:
 		
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	player_score_label.text = "0"
+	
 	for child in grid_container.get_children():
 		if child is Button:
 			buttons.append(child)
@@ -57,6 +68,8 @@ func _ready() -> void:
 	reset_game()
 	reset_grid()
 	reset_round()
+	
+	start_timer()
 
 func get_icon_indexes() -> Dictionary[int, bool]:
 	var indexes_of_icons: Dictionary[int, bool] = {}
@@ -84,9 +97,15 @@ func on_button_pressed(index: int) -> void:
 	buttons[index].disabled = true
 	
 	if not correct_tiles.has(index):
+		# wrong click
+		
 		feedback.show_wrong()
-		await utils.timeout(0.4)
+		handle_lose_round()
+		disable_buttons()
+		
+		await utils.timeout(feedback_showtime)
 		feedback.hide()
+		
 		reset_grid()
 		reset_round()
 	
@@ -98,8 +117,17 @@ func on_button_pressed(index: int) -> void:
 		
 		if click_count == correct_tiles.size():
 			# Round win
+			
+			handle_win_round()
+			evaluate_icon_count()
+			streak_count += 1
+			
+			print("streak_count ",  streak_count)
+			print("chocolate_count ", chocolate_count)
 			feedback.show_correct()
-			await utils.timeout(0.2)
+			disable_buttons()
+			await utils.timeout(feedback_showtime)
+			
 			reset_grid()
 			reset_round()
 			feedback.hide()
@@ -122,5 +150,40 @@ func fade_out(index: int) -> void:
 func enable_buttons() -> void:
 	for button in buttons:
 		button.disabled = false
+		
+func disable_buttons() -> void:
+	for button in buttons:
+		button.disabled = true
+
+func handle_win_round() -> void:
+	points += chocolate_count * streak_count
+	player_score_label.text = str(points)
+
+func handle_lose_round() -> void:
+	points += click_count 
+	player_score_label.text = str(points)
+	
+func evaluate_icon_count() -> void:
+	if streak_count in streaks:
+		chocolate_count += 1
+
+func start_timer() -> void:
+	player_timer_label.text = str(seconds)
+	if seconds <= 0:
+		# Game ended timer's out
+		print("Game ended", points)
+		disable_buttons()
+		return 
+		
+	await utils.timeout(1)
+	seconds -= 1
+	await start_timer()
+
+	
+	
+	
+	
+	
+	
 	
 	
