@@ -1,20 +1,46 @@
 [gd_scene format=3 uid="uid://dxyp34jnklgor"]
 
 [ext_resource type="Theme" uid="uid://bm8opoun61hyp" path="res://theme/menu_theme.tres" id="1_jowre"]
-[ext_resource type="Texture2D" uid="uid://b8k7i34j4el6y" path="res://assets/logo.png" id="2_jprcw"]
+[ext_resource type="Texture2D" uid="uid://dq1deavoxyvc1" path="res://assets/Ferrerorocher_brand_logo.png" id="2_rjxss"]
 [ext_resource type="Script" uid="uid://bsewxssn3vong" path="res://script/start_button.gd" id="3_jprcw"]
-[ext_resource type="FontFile" uid="uid://cybuy7aojrjif" path="res://assets/font/PoetsenOne-Regular.ttf" id="3_qus6b"]
-[ext_resource type="Theme" uid="uid://cqumuq5j4ylg" path="res://grass.tres" id="4_5rxej"]
-[ext_resource type="Theme" uid="uid://dun37am2d0bpl" path="res://theme/button_theme.tres" id="4_qus6b"]
 
-[sub_resource type="Theme" id="Theme_qus6b"]
-Label/colors/font_color = Color(0.94509804, 0.9607843, 0.7411765, 1)
-Label/colors/font_shadow_color = Color(0.16862746, 0.11764706, 0.08235294, 0.23137255)
-Label/constants/shadow_offset_x = 2
-Label/constants/shadow_offset_y = 3
-Label/constants/shadow_outline_size = 3
-Label/font_sizes/font_size = 20
-Label/fonts/font = ExtResource("3_qus6b")
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rjxss"]
+bg_color = Color(0.90588236, 0.5764706, 0, 1)
+corner_detail = 9
+shadow_color = Color(0.14406255, 0.14406255, 0.14406249, 0.6)
+shadow_size = 7
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jprcw"]
+bg_color = Color(0.90588236, 0.5764706, 0, 1)
+corner_detail = 9
+shadow_color = Color(0.14406255, 0.14406255, 0.14406249, 0.6)
+shadow_size = 7
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5rxej"]
+bg_color = Color(0.96021277, 0.6121756, 7.70092e-07, 1)
+corner_detail = 9
+shadow_color = Color(0.14406255, 0.14406255, 0.14406249, 0.6)
+shadow_size = 7
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xxfb2"]
+bg_color = Color(0.90588236, 0.5764706, 0, 1)
+corner_detail = 9
+shadow_color = Color(0.14406255, 0.14406255, 0.14406249, 0.6)
+shadow_size = 7
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qus6b"]
+bg_color = Color(0.84416574, 0.5359117, 0, 1)
+corner_detail = 9
+shadow_color = Color(0.14406255, 0.14406255, 0.14406249, 0.6)
+shadow_size = 7
+
+[sub_resource type="Theme" id="Theme_wr0q8"]
+default_font_size = 20
+Button/styles/disabled = SubResource("StyleBoxFlat_rjxss")
+Button/styles/focus = SubResource("StyleBoxFlat_jprcw")
+Button/styles/hover = SubResource("StyleBoxFlat_5rxej")
+Button/styles/normal = SubResource("StyleBoxFlat_xxfb2")
+Button/styles/pressed = SubResource("StyleBoxFlat_qus6b")
 
 [node name="GameMenu" type="Control" unique_id=1566940627]
 layout_mode = 3
@@ -74,22 +100,23 @@ alignment = 1
 
 [node name="MarginContainer" type="MarginContainer" parent="Panel/PanelContainer/MarginContainer/VBoxContainer" unique_id=2024091590]
 layout_mode = 2
+theme_override_constants/margin_top = 50
+theme_override_constants/margin_bottom = 70
 
-[node name="Logo" type="TextureRect" parent="Panel/PanelContainer/MarginContainer/VBoxContainer/MarginContainer" unique_id=253937427]
-custom_minimum_size = Vector2(450, 0)
+[node name="TextureRect" type="TextureRect" parent="Panel/PanelContainer/MarginContainer/VBoxContainer/MarginContainer" unique_id=253937427]
+custom_minimum_size = Vector2(350, 0)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
-texture = ExtResource("2_jprcw")
+texture = ExtResource("2_rjxss")
 expand_mode = 5
 stretch_mode = 4
 
 [node name="Label" type="Label" parent="Panel/PanelContainer/MarginContainer/VBoxContainer" unique_id=1141267907]
 clip_contents = true
-custom_minimum_size = Vector2(150, 150)
+custom_minimum_size = Vector2(100, 100)
 layout_mode = 2
-theme = SubResource("Theme_qus6b")
-text = "Eyeing for chocolates? Memorize the location before they disappear! Click the exact tiles where they were to get discounts. You only have 60 seconds!"
+text = "This is game description this is game description this is game descriptionthis is game descriptionthis is game description."
 horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 3
@@ -108,21 +135,8 @@ layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 mouse_default_cursor_shape = 2
-theme = ExtResource("4_qus6b")
-text = "Play"
+theme = SubResource("Theme_wr0q8")
+text = "Start Game"
 script = ExtResource("3_jprcw")
-
-[node name="Background2" type="Panel" parent="." unique_id=1333572373]
-visible = false
-custom_minimum_size = Vector2(0, 150)
-layout_mode = 1
-anchors_preset = 12
-anchor_top = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 0
-mouse_filter = 2
-theme = ExtResource("4_5rxej")
 
 [connection signal="pressed" from="Panel/PanelContainer/MarginContainer/VBoxContainer/MarginContainer2/StartButton" to="Panel/PanelContainer/MarginContainer/VBoxContainer/MarginContainer2/StartButton" method="on_start_button_pressed"]
