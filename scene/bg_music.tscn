@@ -6,4 +6,4 @@
 stream = ExtResource("1_fpj07")
 autoplay = true
 bus = &"BGM"
-parameters/looping = false
+parameters/looping = true
