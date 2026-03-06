@@ -97,7 +97,7 @@ The project includes a Web export preset ("Ferrero Hunt"):
 
 ---
 
-## License
+## Credits
 
 - This project is for educational purposes.
 - Sound Effect by <a href="https://pixabay.com/users/aberrantrealities-38952538/?utm_source=link-attribution&utm_medium=referral&utm_campaign=music&utm_content=412050">Jordan Garner</a> from <a href="https://pixabay.com/sound-effects//?utm_source=link-attribution&utm_medium=referral&utm_campaign=music&utm_content=412050">Pixabay</a>
