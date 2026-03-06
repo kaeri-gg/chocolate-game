@@ -250,30 +250,25 @@ horizontal_alignment = 1
 
 [node name="Score" type="Panel" parent="." unique_id=1419713521]
 clip_contents = true
-custom_minimum_size = Vector2(110, 90)
+custom_minimum_size = Vector2(200, 90)
 layout_mode = 1
 anchors_preset = 1
 anchor_left = 1.0
 anchor_right = 1.0
-offset_left = -40.0
-offset_bottom = 40.0
+offset_left = -200.0
+offset_bottom = 90.0
 grow_horizontal = 0
 mouse_filter = 2
 theme = ExtResource("3_fb1ex")
 
 [node name="MarginContainer" type="MarginContainer" parent="Score" unique_id=1919915885]
 layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -49.5
-offset_top = -34.5
-offset_right = 49.5
-offset_bottom = 25.5
-grow_horizontal = 2
-grow_vertical = 2
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -116.0
+offset_bottom = 101.0
+grow_horizontal = 0
 theme_override_constants/margin_left = 10
 theme_override_constants/margin_top = 30
 theme_override_constants/margin_right = 30
@@ -283,7 +278,7 @@ theme_override_constants/margin_bottom = 10
 unique_name_in_owner = true
 layout_mode = 2
 theme = ExtResource("6_xavy2")
-text = "00"
+text = "6584"
 horizontal_alignment = 2
 
 [node name="Counter" type="Panel" parent="." unique_id=1777855578]
