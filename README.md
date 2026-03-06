@@ -4,6 +4,8 @@ A chocolate-themed memory advergame built with **Godot 4.6** (GDScript). Memoriz
 - Developed by Kathleen Povadora.
 - Assets by Alicja and Pariya.
 - Inspired by: Brain Buddies
+
+## [Play Here](https://kaeri-gg.github.io/chocolate-game/release/)
 > *For educational purposes only.*
 
 ![img.png](assets/img.png)
