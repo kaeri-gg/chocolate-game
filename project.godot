@@ -25,6 +25,18 @@ utils="*uid://cqn1kg6r8fyst"
 BgMusic="*uid://sj5p2yu101hb"
 sound_manager="*uid://boxcywfwrq5rd"
 
+[display]
+
+window/size/viewport_width=2560
+window/size/viewport_height=1440
+window/stretch/mode="canvas_items"
+window/stretch/aspect="expand"
+window/stretch/scale=2.0
+
+[dotnet]
+
+project/assembly_name="chocolate-game"
+
 [physics]
 
 3d/physics_engine="Jolt Physics"
