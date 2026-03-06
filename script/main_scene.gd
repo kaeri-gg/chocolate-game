@@ -92,7 +92,7 @@ func assign_icons() -> void:
 		fade_in(index, icon)
 		tiles_icon.set(index, icon)
 	
-	await utils.timeout(1)
+	await utils.timeout(0.5)
 	
 	for index in correct_tiles:
 		fade_out(index)
@@ -101,6 +101,8 @@ func on_play_again_pressed() -> void:
 	reset_game()
 
 func on_button_pressed(index: int) -> void:
+	
+	sound_manager.play("Click")
 	buttons[index].disabled = true
 	
 	if not correct_tiles.has(index):
@@ -165,10 +167,12 @@ func disable_buttons() -> void:
 func handle_win_round() -> void:
 	points += chocolate_count * streak_count
 	player_score_label.text = str(points)
+	sound_manager.play("CorrectAnswer")
 
 func handle_lose_round() -> void:
 	points += click_count 
 	player_score_label.text = str(points)
+	sound_manager.play("WrongAnswer")
 	
 func evaluate_icon_count() -> void:
 	if streak_count % 3 == 0:
@@ -192,8 +196,12 @@ func start_timer() -> void:
 func start_countdown() -> void:
 	count_down_label.text = str(countdown)
 	print(countdown)
+	sound_manager.play("Tick")
+	
 	if countdown == 0:
 		grid_container.show()
+		sound_manager.stop("Tick")
+		
 		player_score_label.text = "0"
 		count_down_label.hide()
 		
@@ -210,7 +218,8 @@ func start_countdown() -> void:
 	
 	
 func show_winning_scene() -> void:
-	utils.points = points
+	utils.points = points + click_count #adds the last correctly clicked icon 
+	sound_manager.play("WinningSound")
 	get_tree().change_scene_to_file("res://scene/winning_scene.tscn")
 	
 	

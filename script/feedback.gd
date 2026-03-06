@@ -3,8 +3,8 @@ extends Panel
 
 @onready var feedbackImage: TextureRect = %TextureRect
 
-const correct_answer = preload("uid://j3nux2qgyx61")
-const wrong_answer = preload("uid://w3jvmc44k6ao")
+const correct_answer = preload("uid://drdxefdp8x2yw")
+const wrong_answer = preload("uid://mpyy6tu83tlb")
 
 func _ready() -> void:
 	self.hide()

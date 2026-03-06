@@ -5,10 +5,13 @@
 [ext_resource type="Theme" uid="uid://c4cqm21oxci5n" path="res://theme/main_scene.tres" id="2_x5n27"]
 [ext_resource type="Theme" uid="uid://dbv4h763ugyhj" path="res://theme/timer_theme.tres" id="3_fb1ex"]
 [ext_resource type="Theme" uid="uid://q4gnfgf0ux1n" path="res://theme/counter_theme.tres" id="4_4wnd8"]
+[ext_resource type="Theme" uid="uid://bka2jrbillr24" path="res://theme/timer_score_theme.tres" id="5_cj0ow"]
 [ext_resource type="FontFile" uid="uid://p4b864enlloj" path="res://assets/font/LuckiestGuy-Regular.ttf" id="6_hrphr"]
-[ext_resource type="Texture2D" uid="uid://w3jvmc44k6ao" path="res://assets/feedback-02.png" id="6_jsie2"]
 [ext_resource type="Script" uid="uid://cprinh7cp8qor" path="res://script/feedback.gd" id="6_qvu5t"]
+[ext_resource type="Theme" uid="uid://d32y3tsp1g0hg" path="res://theme/score.tres" id="6_xavy2"]
 [ext_resource type="Theme" uid="uid://cqumuq5j4ylg" path="res://grass.tres" id="8_pi0uh"]
+[ext_resource type="Texture2D" uid="uid://b8k7i34j4el6y" path="res://assets/logo.png" id="10_86xya"]
+[ext_resource type="Texture2D" path="res://assets/feedback-wrong-2.png" id="10_xavy2"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_pi0uh"]
 bg_color = Color(0.38444993, 0.20696884, 0.09263118, 1)
@@ -202,25 +205,33 @@ theme = ExtResource("2_ry1uq")
 clip_contents = true
 custom_minimum_size = Vector2(110, 70)
 layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -55.0
+offset_right = 55.0
+offset_bottom = 70.0
+grow_horizontal = 2
 theme = ExtResource("3_fb1ex")
 
 [node name="MarginContainer" type="MarginContainer" parent="Timer" unique_id=914101637]
 layout_mode = 0
 offset_right = 110.0
-offset_bottom = 69.0
+offset_bottom = 60.0
 theme_override_constants/margin_left = 10
-theme_override_constants/margin_top = 10
 theme_override_constants/margin_right = 10
-theme_override_constants/margin_bottom = 10
+theme_override_constants/margin_bottom = 0
 
 [node name="PlayerTimerLabel" type="Label" parent="Timer/MarginContainer" unique_id=409350074]
 unique_name_in_owner = true
 layout_mode = 2
+theme = ExtResource("5_cj0ow")
 text = "01:00"
+horizontal_alignment = 1
 
 [node name="Score" type="Panel" parent="." unique_id=1419713521]
 clip_contents = true
-custom_minimum_size = Vector2(110, 70)
+custom_minimum_size = Vector2(110, 90)
 layout_mode = 1
 anchors_preset = 1
 anchor_left = 1.0
@@ -240,18 +251,20 @@ anchor_bottom = 0.5
 offset_left = -49.5
 offset_top = -34.5
 offset_right = 49.5
-offset_bottom = 34.5
+offset_bottom = 25.5
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/margin_left = 10
-theme_override_constants/margin_top = 10
-theme_override_constants/margin_right = 10
+theme_override_constants/margin_top = 30
+theme_override_constants/margin_right = 30
 theme_override_constants/margin_bottom = 10
 
 [node name="PlayerScoreLabel" type="Label" parent="Score/MarginContainer" unique_id=847281285]
 unique_name_in_owner = true
 layout_mode = 2
-text = "326g"
+theme = ExtResource("6_xavy2")
+text = "00"
+horizontal_alignment = 2
 
 [node name="Counter" type="Panel" parent="." unique_id=1777855578]
 layout_mode = 1
@@ -320,7 +333,7 @@ grow_vertical = 2
 [node name="TextureRect" type="TextureRect" parent="Feedback/MarginContainer" unique_id=1239582743]
 unique_name_in_owner = true
 layout_mode = 2
-texture = ExtResource("6_jsie2")
+texture = ExtResource("10_xavy2")
 
 [node name="Grass" type="Panel" parent="." unique_id=1558040279]
 custom_minimum_size = Vector2(0, 150)
@@ -333,3 +346,19 @@ grow_horizontal = 2
 grow_vertical = 0
 mouse_filter = 2
 theme = ExtResource("8_pi0uh")
+
+[node name="LogoContainer" type="MarginContainer" parent="." unique_id=1926646650]
+layout_mode = 1
+offset_right = 170.0
+offset_bottom = 118.58078
+size_flags_horizontal = 4
+theme_override_constants/margin_left = 20
+
+[node name="Logo" type="TextureRect" parent="LogoContainer" unique_id=1671018212]
+custom_minimum_size = Vector2(150, 0)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+texture = ExtResource("10_86xya")
+expand_mode = 5
+stretch_mode = 4
