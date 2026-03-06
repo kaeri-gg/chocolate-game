@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://d1sfkfixttef6" path="res://script/winning_scene.gd" id="1_1op46"]
 [ext_resource type="Theme" uid="uid://ygh08o38q3sj" path="res://theme/game_over_theme.tres" id="1_2ivjl"]
-[ext_resource type="Theme" uid="uid://cqumuq5j4ylg" path="res://grass.tres" id="2_pym3h"]
+[ext_resource type="Theme" uid="uid://cqumuq5j4ylg" path="res://theme/grass.tres" id="2_pym3h"]
 [ext_resource type="FontFile" uid="uid://p4b864enlloj" path="res://assets/font/LuckiestGuy-Regular.ttf" id="3_265hk"]
 [ext_resource type="Texture2D" uid="uid://b8k7i34j4el6y" path="res://assets/logo.png" id="3_luy87"]
 [ext_resource type="Theme" uid="uid://dun37am2d0bpl" path="res://theme/button_theme.tres" id="5_mpa62"]

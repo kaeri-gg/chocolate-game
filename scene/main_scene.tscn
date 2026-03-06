@@ -9,9 +9,9 @@
 [ext_resource type="FontFile" uid="uid://p4b864enlloj" path="res://assets/font/LuckiestGuy-Regular.ttf" id="6_hrphr"]
 [ext_resource type="Script" uid="uid://cprinh7cp8qor" path="res://script/feedback.gd" id="6_qvu5t"]
 [ext_resource type="Theme" uid="uid://d32y3tsp1g0hg" path="res://theme/score.tres" id="6_xavy2"]
-[ext_resource type="Theme" uid="uid://cqumuq5j4ylg" path="res://grass.tres" id="8_pi0uh"]
+[ext_resource type="Theme" uid="uid://cqumuq5j4ylg" path="res://theme/grass.tres" id="8_pi0uh"]
 [ext_resource type="Texture2D" uid="uid://b8k7i34j4el6y" path="res://assets/logo.png" id="10_86xya"]
-[ext_resource type="Texture2D" path="res://assets/feedback-wrong-2.png" id="10_xavy2"]
+[ext_resource type="Texture2D" uid="uid://mpyy6tu83tlb" path="res://assets/feedback-wrong.png" id="10_xavy2"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_pi0uh"]
 bg_color = Color(0.38444993, 0.20696884, 0.09263118, 1)
@@ -94,6 +94,7 @@ unique_name_in_owner = true
 custom_minimum_size = Vector2(125, 125)
 layout_mode = 2
 size_flags_horizontal = 3
+mouse_default_cursor_shape = 2
 theme = ExtResource("2_ry1uq")
 
 [node name="Button2" type="Button" parent="Grid/MarginContainer/GridContainer" unique_id=2030997233]
@@ -101,6 +102,7 @@ unique_name_in_owner = true
 custom_minimum_size = Vector2(125, 125)
 layout_mode = 2
 size_flags_horizontal = 3
+mouse_default_cursor_shape = 2
 theme = ExtResource("2_ry1uq")
 
 [node name="Button3" type="Button" parent="Grid/MarginContainer/GridContainer" unique_id=1154182183]
@@ -108,6 +110,7 @@ unique_name_in_owner = true
 custom_minimum_size = Vector2(125, 125)
 layout_mode = 2
 size_flags_horizontal = 3
+mouse_default_cursor_shape = 2
 theme = ExtResource("2_ry1uq")
 
 [node name="Button4" type="Button" parent="Grid/MarginContainer/GridContainer" unique_id=117593105]
@@ -115,6 +118,7 @@ unique_name_in_owner = true
 custom_minimum_size = Vector2(125, 125)
 layout_mode = 2
 size_flags_horizontal = 3
+mouse_default_cursor_shape = 2
 theme = ExtResource("2_ry1uq")
 
 [node name="Button5" type="Button" parent="Grid/MarginContainer/GridContainer" unique_id=420071638]
@@ -122,6 +126,7 @@ unique_name_in_owner = true
 custom_minimum_size = Vector2(125, 125)
 layout_mode = 2
 size_flags_horizontal = 3
+mouse_default_cursor_shape = 2
 theme = ExtResource("2_ry1uq")
 
 [node name="Button6" type="Button" parent="Grid/MarginContainer/GridContainer" unique_id=543369566]
@@ -129,6 +134,7 @@ unique_name_in_owner = true
 custom_minimum_size = Vector2(125, 125)
 layout_mode = 2
 size_flags_horizontal = 3
+mouse_default_cursor_shape = 2
 theme = ExtResource("2_ry1uq")
 
 [node name="Button7" type="Button" parent="Grid/MarginContainer/GridContainer" unique_id=711281490]
@@ -136,6 +142,7 @@ unique_name_in_owner = true
 custom_minimum_size = Vector2(125, 125)
 layout_mode = 2
 size_flags_horizontal = 3
+mouse_default_cursor_shape = 2
 theme = ExtResource("2_ry1uq")
 
 [node name="Button8" type="Button" parent="Grid/MarginContainer/GridContainer" unique_id=1614785476]
@@ -143,6 +150,7 @@ unique_name_in_owner = true
 custom_minimum_size = Vector2(125, 125)
 layout_mode = 2
 size_flags_horizontal = 3
+mouse_default_cursor_shape = 2
 theme = ExtResource("2_ry1uq")
 
 [node name="Button9" type="Button" parent="Grid/MarginContainer/GridContainer" unique_id=2123380384]
@@ -150,6 +158,7 @@ unique_name_in_owner = true
 custom_minimum_size = Vector2(125, 125)
 layout_mode = 2
 size_flags_horizontal = 3
+mouse_default_cursor_shape = 2
 theme = ExtResource("2_ry1uq")
 
 [node name="Button10" type="Button" parent="Grid/MarginContainer/GridContainer" unique_id=1117668270]
@@ -157,6 +166,7 @@ unique_name_in_owner = true
 custom_minimum_size = Vector2(125, 125)
 layout_mode = 2
 size_flags_horizontal = 3
+mouse_default_cursor_shape = 2
 theme = ExtResource("2_ry1uq")
 
 [node name="Button11" type="Button" parent="Grid/MarginContainer/GridContainer" unique_id=1452310385]
@@ -164,6 +174,7 @@ unique_name_in_owner = true
 custom_minimum_size = Vector2(125, 125)
 layout_mode = 2
 size_flags_horizontal = 3
+mouse_default_cursor_shape = 2
 theme = ExtResource("2_ry1uq")
 
 [node name="Button12" type="Button" parent="Grid/MarginContainer/GridContainer" unique_id=761609547]
@@ -171,6 +182,7 @@ unique_name_in_owner = true
 custom_minimum_size = Vector2(125, 125)
 layout_mode = 2
 size_flags_horizontal = 3
+mouse_default_cursor_shape = 2
 theme = ExtResource("2_ry1uq")
 
 [node name="Button13" type="Button" parent="Grid/MarginContainer/GridContainer" unique_id=1003784180]
@@ -178,6 +190,7 @@ unique_name_in_owner = true
 custom_minimum_size = Vector2(125, 125)
 layout_mode = 2
 size_flags_horizontal = 3
+mouse_default_cursor_shape = 2
 theme = ExtResource("2_ry1uq")
 
 [node name="Button14" type="Button" parent="Grid/MarginContainer/GridContainer" unique_id=1175287760]
@@ -185,6 +198,7 @@ unique_name_in_owner = true
 custom_minimum_size = Vector2(125, 125)
 layout_mode = 2
 size_flags_horizontal = 3
+mouse_default_cursor_shape = 2
 theme = ExtResource("2_ry1uq")
 
 [node name="Button15" type="Button" parent="Grid/MarginContainer/GridContainer" unique_id=1780795885]
@@ -192,6 +206,7 @@ unique_name_in_owner = true
 custom_minimum_size = Vector2(125, 125)
 layout_mode = 2
 size_flags_horizontal = 3
+mouse_default_cursor_shape = 2
 theme = ExtResource("2_ry1uq")
 
 [node name="Button16" type="Button" parent="Grid/MarginContainer/GridContainer" unique_id=1907446115]
@@ -199,6 +214,7 @@ unique_name_in_owner = true
 custom_minimum_size = Vector2(125, 125)
 layout_mode = 2
 size_flags_horizontal = 3
+mouse_default_cursor_shape = 2
 theme = ExtResource("2_ry1uq")
 
 [node name="Timer" type="Panel" parent="." unique_id=1975908733]
@@ -239,6 +255,7 @@ anchor_right = 1.0
 offset_left = -40.0
 offset_bottom = 40.0
 grow_horizontal = 0
+mouse_filter = 2
 theme = ExtResource("3_fb1ex")
 
 [node name="MarginContainer" type="MarginContainer" parent="Score" unique_id=1919915885]
@@ -275,6 +292,7 @@ anchor_right = 0.5
 anchor_bottom = 0.5
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 2
 theme = ExtResource("4_4wnd8")
 
 [node name="MarginContainer" type="MarginContainer" parent="Counter" unique_id=1406042906]
@@ -290,6 +308,7 @@ offset_right = 43.0
 offset_bottom = 102.5
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 2
 
 [node name="CountDownLabel" type="Label" parent="Counter/MarginContainer" unique_id=1206069657]
 unique_name_in_owner = true
@@ -314,6 +333,7 @@ offset_right = 20.0
 offset_bottom = 20.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 2
 script = ExtResource("6_qvu5t")
 
 [node name="MarginContainer" type="MarginContainer" parent="Feedback" unique_id=1174390133]
@@ -352,6 +372,7 @@ layout_mode = 1
 offset_right = 170.0
 offset_bottom = 118.58078
 size_flags_horizontal = 4
+mouse_filter = 2
 theme_override_constants/margin_left = 20
 
 [node name="Logo" type="TextureRect" parent="LogoContainer" unique_id=1671018212]
